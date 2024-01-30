@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stepper</title>
+    <link rel="stylesheet" href="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+        }
+        
+        .circle {
+            transition: all 200ms ease;
+        }
+        
+        .circle.active {
+            border-color: blue !important;
+            transition-delay: 100ms;
+        }
+        
+        .indicator {
+            transition: all 300ms ease;
+        }
+        
+        .buttons button {
+            transition: all 200ms linear;
+        }
+    </style>
+
+</head>
+
+<body class="h-100 d-flex align-items-center justify-content-center bg-white">
+
+    <div class=" w-50  ">
+        <div class="steps d-flex w-100 align-items-center justify-content-between position-relative ">
+
+            <span class="circle  rounded-circle   border border-3 border-dark-subtle  bg-white d-flex justify-content-center align-items-center  active" style="height: 50px; width:50px; "> 1</span>
+
+            <span class="circle rounded-circle   border border-3 border-dark-subtle bg-white  d-flex justify-content-center align-items-center" style="height: 50px; width:50px; "> 2</span>
+
+            <span class="circle rounded-circle   border border-3 border-dark-subtle  bg-white d-flex justify-content-center align-items-center" style="height: 50px; width:50px; "> 3</span>
+
+
+            <span class="circle rounded-circle   border border-3 border-dark-subtle bg-white  d-flex justify-content-center align-items-center" style="height: 50px; width:50px; "> 4</span>
+
+            <div class="progress-bar position-absolute  z-n1 w-100 bg-dark-subtle" style="height: 4px; ">
+                <span class="indicator position-absolute h-100 bg-primary"></span>
+            </div>
+        </div>
+
+        <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-center">
+            <button id="prev" class="btn btn-primary " disabled> previous</button>
+            <button id="next" class="btn btn-primary"> next</button>
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll(".buttons button");
+        const circles = document.querySelectorAll(".circle");
+        const progressBar = document.querySelector(".indicator");
+        let currentStep = 1;
+        const updateSteps = (e) => {
+            currentStep = e.target.id === 'next' ? ++currentStep : --currentStep;
+            console.log("step", currentStep);
+            circles.forEach((circle, index) => {
+                circle.classList[`${index < currentStep ? 'add':'remove'}`]("active");
+            });
+            progressBar.style.width = `${((currentStep - 1)/(circles.length - 1)) * 100}%`;
+            if (currentStep === circles.length) {
+                buttons[1].disabled = true;
+            } else if (currentStep === 1) {
+                buttons[0].disabled = true;
+            } else {
+                buttons.forEach(button => button.disabled = false)
+            }
+        };
+        buttons.forEach(button => {
+
+            button.addEventListener("click", updateSteps);
+        })
+    </script>
+
+    <!-- <script>
+        const topHeading = document.getElementById("top-heading")
+        const buttons = document.querySelectorAll(".buttons button");
+        const circles = document.querySelectorAll(".circle");
+        const progressBar = document.querySelector(".indicator");
+        let currentStep = 1;
+        const updateSteps = (e) => {
+            currentStep = e.target.id === 'next' ? ++currentStep : --currentStep;
+            console.log("step", currentStep);
+            circles.forEach((circle, index) => {
+                circle.classList[`${index < currentStep ? 'add':'remove'}`]("active");
+            });
+            progressBar.style.width = `${((currentStep - 1)/(circles.length - 1)) * 100}%`;
+            if (currentStep === circles.length) {
+                buttons[1].disabled = true;
+            } else if (currentStep === 1) {
+                buttons[0].disabled = true;
+            } else {
+                buttons.forEach(button => button.disabled = false)
+            }
+            circles.forEach(circle => {
+                circle.style.color = topHeading.style.color;
+                if (circle.classList.contains("active")) {
+                    circle.style.border = `3px solid ${topHeading.style.color}`;
+                    progressBar.style.backgroundColor = topHeading.style.color;
+                } else {
+                    circle.style.border = `3px solid gainsboro`;
+                }
+
+            })
+        };
+
+        buttons.forEach(button => {
+            button.addEventListener("click", updateSteps);
+        });
+    </script> -->
+</body>
+
+</html>

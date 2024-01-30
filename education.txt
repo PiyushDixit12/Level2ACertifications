@@ -1,0 +1,201 @@
+Educational Course Registration: write a field 50 names  with input restriction and data
+
+Full Name:
+Input Restriction: Alphabets only
+Example Data: John Doe
+Date of Birth:
+
+Input Restriction: Date format (MM/DD/YYYY)
+Example Data: 01/15/1990
+Gender:
+
+Input Restriction: Dropdown (Male/Female/Other)
+Example Data: Female
+Contact Number:
+
+Input Restriction: Numeric only
+Example Data: 1234567890
+Email Address:
+
+Input Restriction: Valid email format
+Example Data: john.doe@example.com
+Address Line 1:
+
+Input Restriction: Alphanumeric
+Example Data: 123 Main Street
+Address Line 2:
+
+Input Restriction: Alphanumeric
+Example Data: Apartment 4B
+City:
+
+Input Restriction: Alphabets only
+Example Data: Anytown
+State/Province:
+
+Input Restriction: Alphabets only
+Example Data: California
+ZIP/Postal Code:
+
+Input Restriction: Alphanumeric
+Example Data: 12345
+Country:
+
+Input Restriction: Alphabets only
+Example Data: United States
+Highest Education Level:
+
+Input Restriction: Dropdown (High School/Undergraduate/Postgraduate)
+Example Data: Postgraduate
+School/University Name:
+
+Input Restriction: Alphanumeric
+Example Data: ABC University
+Major/Field of Study:
+
+Input Restriction: Alphabets only
+Example Data: Computer Science
+Graduation Year:
+
+Input Restriction: Numeric (YYYY)
+Example Data: 2022
+GPA/Percentage:
+
+Input Restriction: Numeric with decimal
+Example Data: 3.75
+Previous Course(s) Completed:
+
+Input Restriction: Alphanumeric
+Example Data: Introduction to Programming
+Course Preferences:
+
+Input Restriction: Alphanumeric
+Example Data: Web Development
+Technical Skills:
+
+Input Restriction: Alphanumeric
+Example Data: Java, HTML, CSS
+Soft Skills:
+
+Input Restriction: Alphabets only
+Example Data: Communication, Teamwork
+Certifications:
+
+Input Restriction: Alphanumeric
+Example Data: Microsoft Certified Professional
+Languages Proficiency:
+
+Input Restriction: Alphabets only
+Example Data: English (Advanced)
+Resume/CV Upload:
+
+Input Restriction: File upload (PDF/Word)
+Example Data: [Upload File]
+LinkedIn Profile URL:
+
+Input Restriction: Valid URL format
+Example Data: https://www.linkedin.com/in/johndoe
+Portfolio URL:
+
+Input Restriction: Valid URL format
+Example Data: https://www.johndoeportfolio.com
+Preferred Learning Format:
+
+Input Restriction: Dropdown (In-person/Online/Hybrid)
+Example Data: Online
+Preferred Course Schedule:
+
+Input Restriction: Alphanumeric
+Example Data: Evening classes, weekends
+Financial Assistance Needed:
+
+Input Restriction: Dropdown (Yes/No)
+Example Data: Yes
+Emergency Contact Name:
+
+Input Restriction: Alphabets only
+Example Data: Jane Doe
+Emergency Contact Number:
+
+Input Restriction: Numeric only
+Example Data: 9876543210
+Emergency Contact Relationship:
+
+Input Restriction: Alphabets only
+Example Data: Sister
+Coding/Technical Challenges Completed:
+
+Input Restriction: Alphanumeric
+Example Data: Project Euler, CodeSignal challenges
+Project Management Experience:
+
+Input Restriction: Alphanumeric
+Example Data: Managed a team project on software development
+Additional Comments/Information:
+
+Input Restriction: Alphanumeric
+Example Data: I am passionate about web development and have a strong interest in artificial intelligence.
+Preferred Communication Method:
+
+Input Restriction: Dropdown (Email/Phone/Both)
+Example Data: Email
+LinkedIn Recommendations:
+
+Input Restriction: Alphanumeric
+Example Data: Received recommendations for my teamwork skills on LinkedIn.
+Coding Bootcamp Attended:
+
+Input Restriction: Alphanumeric
+Example Data: Full Stack Development Bootcamp
+Tech Conferences Attended:
+
+Input Restriction: Alphanumeric
+Example Data: Attended Web Summit 2021
+Foreign Language Proficiency:
+
+Input Restriction: Alphabets only
+Example Data: Spanish (Intermediate)
+Preferred Coding Languages:
+
+Input Restriction: Alphabets only
+Example Data: Python, JavaScript
+Publications/Research Papers:
+
+Input Restriction: Alphanumeric
+Example Data: Published a research paper on machine learning algorithms
+GitHub Repository URL:
+
+Input Restriction: Valid URL format
+Example Data: https://github.com/johndoe
+Hobbies and Interests:
+
+Input Restriction: Alphanumeric
+Example Data: Reading, hiking, playing the guitar
+Preferred Mentorship:
+
+Input Restriction: Dropdown (Yes/No)
+Example Data: Yes
+Preferred Mentorship Area:
+
+Input Restriction: Alphanumeric
+Example Data: Front-end web development
+Extracurricular Activities:
+
+Input Restriction: Alphanumeric
+Example Data: Member of the school's coding club
+Coding Competitions Participated:
+
+Input Restriction: Alphanumeric
+Example Data: Google Code Jam 2022
+Open Source Contributions:
+
+Input Restriction: Alphanumeric
+Example Data: Contributed to the Apache Foundation projects
+Professional Memberships:
+
+Input Restriction: Alphanumeric
+Example Data: Member of IEEE
+Acknowledgment and Consent:
+
+Input Restriction: Checkbox (I agree to the terms and conditions)
+Example Data: [ ] (Unchecked)

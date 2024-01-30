@@ -1,0 +1,202 @@
+          :root {
+              --sb-track-color: #c1c1c1;
+              --sb-thumb-color: #444247;
+              --sb-size: 6px;
+              scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+          }
+
+          .main-container::-webkit-scrollbar {
+              width: var(--sb-size)
+          }
+
+          .main-container::-webkit-scrollbar-track {
+              background: var(--sb-track-color);
+              border-radius: 10px;
+          }
+
+          .main-container::-webkit-scrollbar-thumb {
+              background: var(--sb-thumb-color);
+              border-radius: 10px;
+          }
+
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+
+          body {
+              width: 100vw !important;
+              height: 100vh !important;
+              padding: 2px;
+          }
+
+          #top-heading {
+              background-color: white;
+              margin: auto;
+              width: 98%;
+              border-radius: 5px;
+              box-shadow: 1px 1px 5px #adb5bd;
+          }
+
+          .stepper-box {
+              box-shadow: 1px 1px 5px #adb5bd;
+          }
+
+          .parent-container {
+              max-height: calc(100% - 100px);
+          }
+
+          .main-container {
+              display: none;
+              max-width: 50%;
+              min-width: 50%;
+              padding: 10px 30px;
+              border-radius: 10px;
+              background-color: white;
+              margin: 10px auto !important;
+              box-shadow: 1px 1px 5px #adb5bd;
+              overflow-y: auto;
+          }
+
+          .main-container div {
+              margin: 10px 0px !important;
+          }
+
+          #personal-information {
+              display: block;
+          }
+
+          label {
+              text-transform: capitalize !important;
+              font-size: 12px !important;
+          }
+
+          input,
+          select {
+              outline: 1px solid transparent !important;
+              display: block !important;
+              padding: 3px 10px;
+              border: 2px solid #716a6a;
+              border-radius: 4px;
+              width: 100%;
+          }
+
+          input::placeholder,
+          select::placeholder {
+              font-size: 14px !important;
+          }
+
+          .input-error {
+              color: red;
+              font-size: 12px !important;
+          }
+
+          .btn-box {
+              border-radius: 5px;
+              border: none !important;
+              padding: 2px 10px;
+          }
+
+          .btn-custom,
+          .btn-custom:hover,
+          .btn-custom:active {
+              color: white !important;
+          }
+
+          .btn-black,
+          .btn-black:hover,
+          .btn-black:active {
+              background-color: black !important;
+          }
+
+          .btn-custom:disabled {
+              opacity: 0.7 !important;
+          }
+
+          .cursor-pointer {
+              cursor: pointer !important;
+          }
+
+          .theme-box {
+              width: 50px;
+              height: 50px;
+          }
+
+          .theme-active,
+          .theme-box:hover {
+              border: 2px solid white !important;
+              outline: 3px solid black !important;
+          }
+
+          /* code for stepper */
+
+          .circle {
+              border: 3px solid gainsboro;
+              transition: all 200ms ease;
+              height: 35px;
+              width: 35px;
+              font-size: 14px;
+          }
+
+          .circle.active {
+              border-color: black;
+              transition-delay: 100ms;
+          }
+
+          .progress-bar {
+              width: 100%;
+              background-color: gainsboro !important;
+          }
+
+          .indicator {
+              transition: all 300ms ease;
+              background: #000;
+          }
+
+          .buttons button {
+              transition: all 200ms linear;
+          }
+
+          @media screen and (max-width:768px) {
+              body {
+                  height: auto !important;
+                  padding: 0px 4px;
+              }
+
+              .theme-box {
+                  width: 30px;
+                  height: 30px;
+                  margin: 0px 2px !important;
+              }
+
+              #color-theme-box {
+                  width: 96% !important;
+                  position: static !important;
+                  transform: translateY(0%) !important;
+                  /* margin: 10px auto 0px !important; */
+                  display: flex !important;
+                  justify-content: end;
+              }
+
+              #color-theme-box div {
+                  float: left !important;
+              }
+
+              .stepper-box {
+                  width: 100% !important;
+              }
+
+              .circle {
+                  height: 25px;
+                  width: 25px;
+                  font-size: 12px;
+              }
+
+              .main-container {
+                  max-width: 100%;
+                  min-width: 95%;
+                  padding: 10px 10px;
+                  height: auto !important;
+              }
+          }

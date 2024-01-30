@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Course Registration</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.1-dist//bootstrap-5.3.1-dist//css//bootstrap.min.css">
+    <style>
+        * {
+            margin: 0px !important;
+        }
+        
+        body {
+            width: 100vw;
+            --sb-track-color: #c1c1c1;
+            --sb-thumb-color: #444247;
+            --sb-size: 6px;
+            scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+         ::-webkit-scrollbar {
+            width: var(--sb-size)
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: var(--sb-track-color);
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: var(--sb-thumb-color);
+            border-radius: 10px;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="url"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            display: block !important;
+            padding: 3px 10px;
+            width: 100%;
+        }
+        
+        input,
+        select {
+            border: 2px solid #716a6a;
+            border-radius: 4px;
+            width: 100%;
+        }
+        
+        input:focus {
+            outline: none;
+        }
+        
+        input:invalid {
+            border: 2px solid red !important;
+        }
+        
+        .input-error {
+            color: red;
+            font-size: 12px !important;
+        }
+        
+        input[type="checkbox"] {
+            width: auto !important;
+            border: 0px solid black;
+            outline: none;
+            float: left;
+        }
+        
+        .main-container {
+            display: none;
+            width: 50% !important;
+            max-height: 70vh !important;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0px auto !important;
+            box-shadow: 1px 1px 10px gray;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: transparent !important;
+        }
+        
+        .main-container div {
+            margin: 10px 0px !important;
+        }
+        
+        .btn-box {
+            border-radius: 5px;
+            border: none!important;
+            padding: 2px 10px;
+        }
+        
+        .btn-custom {
+            background-color: black;
+            color: white;
+        }
+        
+        .cursor-pointer {
+            cursor: pointer !important;
+        }
+        
+        .theme-box {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .theme-active,
+        .theme-box:hover {
+            border: 2px solid white !important;
+            outline: 3px solid black !important;
+        }
+        
+        body {
+            /* background-image: linear-gradient(to bottom right, #7F7FD5, #91EAE4); */
+            background-position: 100%;
+            height: 100vh;
+        }
+        
+        #personal-information {
+            display: block;
+        }
+        
+        .container-fluid {
+            height: calc(100vh - 40px)!important;
+        }
+        
+        @media screen and (max-width:500px) {
+            .theme-box {
+                width: 25px;
+                height: 25px;
+                margin: 0px 2px !important;
+            }
+            .container-fluid {
+                height: calc(100vh - 116px) !important;
+                overflow: auto;
+            }
+            .main-container {
+                width: 100% !important;
+            }
+            #color-theme-box {
+                position: static !important;
+                transform: translateY(0%) !important;
+                margin: 10px 0px 0px !important;
+                display: flex !important;
+                justify-content: end;
+            }
+            #color-theme-box div {
+                float: left !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 class=" text-white text-center py-1" id="top-heading" style="background-color: #000;">Welcome to Course Registration </h2>
+    <!-- <h2 class="bg-black text-white text-center">Welcome to Educational Course Registration </h2> -->
+
+    <div id="color-theme-box" class=" position-fixed translate-middle-y end-0 top-50 me-3">
+        <div class="mb-1 border border-2 border-dark rounded-circle cursor-pointer theme-active theme-box " id="theme-1" style=" background-image: linear-gradient(to right,#191717,#F1EFEF);"> </div>
+        <div class="mb-1 border border-2 border-dark rounded-circle  cursor-pointer theme-box  " id="theme-2" style="background-image: linear-gradient(to right,#7F7FD5,#91EAE4);"> </div>
+        <div class="mb-1 border border-2 border-dark rounded-circle cursor-pointer theme-box   " id="theme-3" style="background-image: linear-gradient(to right,#0F3443,#34E89E);"> </div>
+        <div class="mb-1 border border-2 border-dark rounded-circle  cursor-pointer  theme-box " id="theme-4" style="background-image: linear-gradient(to right,#333399,#FF00CC);"> </div>
+        <div class="mb-1 border border-2 border-dark rounded-circle  cursor-pointer theme-box  " id="theme-5" style="background-image: linear-gradient(to right,#891180,#EEA1EB);"> </div>
+
+    </div>
+
+    <div class="container-fluid d-flex justify-content-md-center align-items-md-center mt-3 ">
+
+        <div id="personal-information" class="main-container">
+            <h5> Personal Information: </h5>
+            <div>
+                <label for="full_name">Full Name :- </label>
+                <input type="text" id="full_name" placeholder="Enter your Name" class="w-100">
+            </div>
+
+            <div>
+                <label for="date-of-birth">DOB:- </label>
+                <input type="date" id="date-of-birth" placeholder="Enter your DOB">
+
+            </div>
+            <div>
+                <label for="gender">Gender:- </label>
+                <select name="gender" id="gender">
+                        <option value="">Select</option>
+             <option value="Male">Male</option>
+              <option value="Female">Female</option>
+             <option value="other">Other</option>
+             </select>
+            </div>
+            <div>
+                <label for="mob-no">Contact Number:- </label>
+                <input type="tel" id="mob-no" pattern="[0-9]{10}" placeholder="Enter your Number">
+
+
+            </div>
+            <div>
+                <label for="e-mail">Email :- </label>
+                <input type="email" id="e-mail" placeholder="Enter your Email">
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="address-information" class="main-container">
+            <h5>Address Information:</h5>
+            <div>
+                <label for="Address">Address 1:- </label>
+                <input type="text" id="Address" placeholder="Enter your Address">
+            </div>
+
+            <div>
+                <label for="Address">Address 2:- </label>
+                <input type="text" id="Address2" placeholder="Enter your Address">
+            </div>
+            <div>
+                <label for="city">city :- </label>
+                <input type="text" id="city" placeholder="Enter your city">
+
+            </div>
+            <div>
+                <label for="state">state :- </label>
+                <input type="text" id="state" placeholder="Enter your state">
+            </div>
+            <div>
+                <label for="zip-code">ZIP code:- </label>
+                <input type="tel" id="zip-code" pattern="[0-9]{5}" placeholder="Enter your zip-code">
+
+            </div>
+            <div>
+                <label for="Country">Country:- </label>
+                <input type="text" id="Country" placeholder="Enter your Country">
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="education-information" class="main-container">
+            <h5> Educational Information </h5>
+            <div>
+                <label for="Education-level">Highest Education Level:- </label>
+                <select name="Education-level" id="Education-level">
+                  <option value="">Select</option>
+                  <option value="High School">High School</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Postgraduate">Postgraduate</option>
+                  </select>
+            </div>
+            <div>
+                <label for="School-name">School/University Name:- </label>
+                <input type="text" id="School-name" placeholder="Enter your School/University Name ">
+
+            </div>
+            <div>
+                <label for="field-study">Major/Field of Study:-</label>
+                <input type="text" name="field-study" id="field-study" placeholder="Enter your field of study ">
+
+            </div>
+            <div>
+                <label for="Graduation-year">Graduation Year:-</label>
+                <input type="number" maxlength="4" minlength="4" name="Graduation-year" id="Graduation-year" placeholder="Enter your Graduation year ">
+
+            </div>
+            <div>
+                <label for="Percentage">GPA/Percentage:-</label>
+                <input type="number" maxlength="4" step="4" name="Percentage" id="Percentage" placeholder="Enter your Percentage">
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="skills-and-certification" class="main-container">
+            <h5>Academic Details: </h5>
+            <div>
+                <label for="previous-course">Previous Course(s) Completed:</label>
+                <input type="text" name="previous-course" id="previous-course" placeholder="Enter your previous course ">
+
+            </div>
+            <div>
+                <label for="course-preferences">Course Preferences:</label>
+                <input type="text" name="course-preferences" id="course-preferences" placeholder="Enter your course-preferences ">
+
+            </div>
+            <div>
+                <label for="technical-skill">Technical Skills:</label>
+                <input type="text" name="technical-skill" id="technical-skill" placeholder="Enter your technical skill ">
+
+            </div>
+            <div>
+                <label for="Soft-skills:">Soft Skills:</label>
+                <input type="text" name="Soft-skills:" id="Soft-skills:" placeholder="Enter your Soft-skills ">
+
+            </div>
+            <div>
+                <label for="Certifications">Certifications:</label>
+                <input type="text" name="Certifications" id="Certifications" placeholder="Enter your Certifications ">
+
+            </div>
+            <div>
+                <label for="Languages-proficiency">Languages Proficiency:</label>
+                <input type="text" name="Languages-proficiency" id="Languages-proficiency" placeholder="Enter your Languages-proficiency ">
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="document-upload-and-web-presence" class="main-container">
+            <h5>Document Upload and Web Presence:</h5>
+            <div> <label for="Resume-upload">Resume/CV Upload:</label>
+                <input type="file" name="Resume-upload" id="Resume-upload" placeholder="Enter your Resume-upload ">
+            </div>
+
+            <div> <label for="LinkedIn-url">LinkedIn Profile URL:</label>
+                <input type="url" name="LinkedIn-url" id="LinkedIn-url" placeholder="Enter your LinkedIn-url ">
+
+            </div>
+            <div> <label for="Portfolio-url">Portfolio URL:</label>
+                <input type="url" name="Portfolio-url" id="Portfolio-url" placeholder="Enter your Portfolio-url ">
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="Learning-Preferences-and-Financial-Information" class="main-container">
+            <h5>Learning Preferences and Financial Information:</h5>
+            <div> <label for="preferred-way">Preferred Learning Format:</label>
+                <select name="preferred-way" id="preferred-way">
+                          <option value="">Select</option>
+                          <option value="In-person">In-person</option>
+                          <option value="Online">Online</option>
+                          <option value="Hybrid">Hybrid</option>
+                    </select>
+            </div>
+            <div>
+                <label for="course-schedule">Preferred Course Schedule:</label>
+                <input type="text" name="course-schedule" id="course-schedule" placeholder="Enter your course-schedule" p>
+
+            </div>
+            <div>
+                <label for="Financial-needed">Financial Assistance Needed:</label>
+                <select name="Financial-needed" id="Financial-needed">
+        <option value="">Select</option>
+     <option value="yes">yes</option>
+     <option value="no">no</option> 
+                </select>
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="Emergency-contacts-information" class="main-container">
+            <h5>Emergency Contact Information: </h5>
+            <div> <label for="Emergency-contact-name">Emergency Contact Name:</label>
+                <input type="text" name="Emergency-contact-name" id="Emergency-contact-name" placeholder="Enter your Emergency-contact-name">
+
+            </div>
+            <div>
+                <label for="Emergency-contact-number">Emergency Contact Number:</label>
+                <input type="tel" pattern="[0-9]{10}" name="Emergency-contact-number" id="Emergency-contact-number" placeholder="Enter your Emergency-contact-number">
+
+
+            </div>
+            <div> <label for="Emergency-contact-Relationship">Emergency Contact Relationship:</label>
+                <input type="text" name="Emergency-contact-Relationship" id="Emergency-contact-Relationship" placeholder="Enter your Emergency-contact-Relationship">
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="technical-and-professional-details" class="main-container">
+            <h5> Technical and Professional Details:</h5>
+
+            <div> <label for="technical-challenges">Coding/Technical Challenges Completed:</label>
+                <input type="text" name="technical-challenges" id="technical-challenges">
+
+            </div>
+            <div> <label for="Project-management-experience">Project Management Experience:</label>
+                <input type="text" name="Project-experience" id="Project-experience">
+
+            </div>
+            <div> <label for="Additional-information">Additional Comments/Information:</label>
+                <input type="text" name="Additional-information" id="Additional-information">
+
+            </div>
+            <div>
+                <label for="preferred-way-communication">Preferred Communication Method:</label>
+                <select name="preferred-way-communication" id="preferred-way-communication">
+        <option value="">Select</option>
+     <option value="email">email</option>
+     <option value="mobile">mobile</option>
+     <option value="both">both</option>
+                    </select>
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="Professional-networking-and-experience" class="main-container">
+            <h5>Professional Networking and Experience:</h5>
+            <div> <label for="LinkedIn-recommendation">LinkedIn Recommendations:</label>
+                <input type="text" name="LinkedIn-recommendation" id="LinkedIn-recommendation">
+
+            </div>
+            <div> <label for="Coding-bootcamp">Coding Boot-camp Attended:</label>
+                <input type="text" name="Coding-boot-camp" id="Coding-bootcamp">
+
+            </div>
+            <div> <label for="tech-conferences">Tech Conferences Attended:</label>
+                <input type="text" name="tech-conferences" id="tech-conferences">
+
+            </div>
+            <div> <label for="Foreign-language">Foreign Language Proficiency:</label>
+                <input type="text" name="Foreign-language" id="Foreign-language">
+
+            </div>
+            <div> <label for="preferred-coding-language">Preferred Coding Languages:</label>
+                <input type="text" name="preferred-coding-language" id="preferred-coding-language">
+
+            </div>
+            <div> <label for="Research-paper">Publications/Research Papers:</label>
+                <input type="text" name="Research-paper" id="Research-paper">
+
+            </div>
+            <div> <label for="github-url">GitHub Repository URL:</label>
+                <input type="url" name="github-url" id="github-url" placeholder="Enter your github-url ">
+
+            </div>
+            <div><label for="Hobbies-interest">Hobbies and Interests:</label>
+                <input type="text" name="Hobbies-interest" id="Hobbies-interest">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 " onclick="moveToNext()"> Next </button>
+            </div>
+        </div>
+
+        <div id="Mentorship-and-personal-development" class="main-container">
+            <h5>Mentorship and Personal Development:</h5>
+            <div> <label for="preferred-mentorship">Preferred Mentorship:</label>
+                <select name="preferred-mentorship" id="preferred-mentorship">
+                 <option value="">Select</option>
+                  <option value="yes">yes</option>
+                    <option value="no">no</option> 
+                 </select>
+
+            </div>
+            <div> <label for="preferred-mentorship-area">Preferred Mentorship Area:</label>
+                <input type="text" name="preferred-mentorship-area" id="preferred-mentorship-area">
+            </div>
+            <div> <label for="Extracurricular-activity">Extracurricular Activities:</label>
+                <input type="text" name="Extracurricular-activity" id="Extracurricular-activity">
+            </div>
+            <div> <label for="Coding-competitions">Coding Competitions Participated:</label>
+                <input type="text" name="Coding-competitions" id="Coding-competitions">
+            </div>
+            <div> <label for="open-source-contributions">Open Source Contributions:</label>
+                <input type="text" name="open-source-contributions" id="open-source-contributions">
+            </div>
+            <div> <label for="Professional-memberships">Professional Memberships:</label>
+                <input type="text" name="Professional-memberships" id="Professional-memberships">
+            </div>
+            <div> <label for="terms-condition-checkbox">Acknowledgment and Consent:</label>
+                <input type="checkbox" name="terms-condition-checkbox" id="terms-condition-checkbox">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn-box btn-custom py-1 "> Submit </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- theme script -->
+    <script>
+        const theme1 = document.getElementById("theme-1");
+        const theme2 = document.getElementById("theme-2");
+        const theme3 = document.getElementById("theme-3");
+        const theme4 = document.getElementById("theme-4");
+        const theme5 = document.getElementById("theme-5");
+
+        function removeClassActive() {
+            theme1.classList.remove("theme-active");
+            theme2.classList.remove("theme-active");
+            theme3.classList.remove("theme-active");
+            theme4.classList.remove("theme-active");
+            theme5.classList.remove("theme-active");
+
+        }
+
+        function changeColor(color, secondColor) {
+            const inputs = document.getElementsByTagName("input");
+            const select = document.getElementsByTagName("select");
+            const mainContainer = document.getElementsByClassName('main-container');
+            const btnCustom = document.getElementsByClassName('btn-custom');
+            const topHeading = document.getElementById("top-heading");
+            const arrInputs = Array.from(inputs);
+            const arrSelect = Array.from(select);
+            const arrMainContainer = Array.from(mainContainer);
+            const arrBtnCustom = Array.from(btnCustom);
+            arrInputs.forEach(value => {
+                value.style.border = `2px solid ${color}`;
+                // value.style.outline = `1px solid ${color}`;
+            });
+            arrSelect.forEach(value => {
+                value.style.border = `2px solid ${color}`;
+                // value.style.outline = `1px solid ${color}`;
+            });
+            arrMainContainer.forEach(value => {
+                value.style.boxShadow = `1px 1px 10px ${color}`;
+            });
+            arrBtnCustom.forEach(value => {
+                value.style.backgroundColor = `${color}`
+            });
+            topHeading.style.backgroundColor = `${color}`;
+            // document.body.style.backgroundImage = `linear-gradient(90deg,${color}, ${secondColor})`;
+        }
+
+        theme1.addEventListener("click", (e) => {
+            removeClassActive();
+            theme1.classList.add("theme-active");
+            // changeColor("#716a6a", '#F1EFEF');
+            changeColor("black", '#F1EFEF');
+
+        });
+        theme2.addEventListener("click", (e) => {
+            removeClassActive();
+            theme2.classList.add("theme-active");
+
+            changeColor("#7F7FD5", '#91EAE4');
+        });
+        theme3.addEventListener("click", (e) => {
+            removeClassActive();
+            theme3.classList.add("theme-active");
+
+            changeColor("#0F3443", "#34E89E");
+        });
+        theme4.addEventListener("click", (e) => {
+            removeClassActive();
+            theme4.classList.add("theme-active");
+
+            changeColor("#333399", "#FF00CC");
+        });
+        theme5.addEventListener("click", (e) => {
+            removeClassActive();
+            theme5.classList.add("theme-active");
+
+            changeColor("#891180", "#EEA1EB");
+        });
+    </script>
+
+    <!-- form validation script -->
+    <script>
+        function checkTextInputValid(value) {
+
+            if (value == null || value == "") {
+                return 0;
+            } else {
+                return value.split("").filter(val => {
+                    return !val.match(/[a-zA-Z]/i);
+                }).length;
+            }
+
+        }
+
+        function urlValid(value) {
+            const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+            if (urlRegex.test(value)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function addErrorShowText(value, parentElement, inputValidation) {
+            value.style.border = "2px solid red";
+            const p = document.createElement("span");
+            p.classList.add("input-error");
+            let validation = "";
+            if (value.value == "") {
+                validation = "field is required";
+            } else if (inputValidation && inputValidation.length) {
+                validation = `${inputValidation}`;
+            } else {
+                validation = `please fill a valid ${value.id}`;
+            }
+
+            // p.textContent = `enter a valid ${value.id}`
+            p.textContent = `${validation}`
+
+            parentElement.appendChild(p);
+        }
+
+        function removeErrorShowText(value, parentElement, color) {
+            value.style.border = `2px solid ${color}`;
+            let p = parentElement.lastElementChild;
+            if (p.classList.contains("input-error")) {
+                parentElement.lastElementChild.remove();
+            }
+        }
+
+        function isAlreadyShowingError(parentElement) {
+            let p = parentElement.lastElementChild;
+            if (p.classList.contains("input-error")) {
+                parentElement.lastElementChild.remove();
+            }
+        }
+
+        function personalInformationValidation() {
+            const form = document.getElementById("education-form");
+            const inputs = document.getElementsByTagName("input");
+            const selects = document.getElementsByTagName("select");
+            const arrSelects = Array.from(selects);
+            const arrayInputs = Array.from(inputs);
+            arrayInputs.forEach(value => {
+                const parentElement = value.parentElement;
+                const color = document.getElementById("top-heading").style.backgroundColor;
+                if (value.type == "text") {
+                    value.addEventListener("change", (e) => {
+                        const flag = checkTextInputValid(value.value);
+                        if (!flag) {
+                            removeErrorShowText(value, parentElement, color);
+                        } else {
+                            if (!isAlreadyShowingError(parentElement)) {
+
+                                addErrorShowText(value, parentElement, " please don't use number & special characters");
+                            }
+                        }
+
+                    });
+                } else if (value.type == "url") {
+                    value.addEventListener("change", (e) => {
+                        const flag = urlValid(value.value);
+                        if (flag) {
+                            // url is correct 
+                            removeErrorShowText(value, parentElement, color);
+                        } else {
+                            if (!isAlreadyShowingError(parentElement)) {
+                                addErrorShowText(value, parentElement);
+                            }
+                        }
+                    });
+                } else if (value.type == "tel" || value.type == "email" || value.type == 'date') {
+                    value.addEventListener("change", () => {
+                        if (value.validity.valid) {
+                            removeErrorShowText(value, parentElement, color);
+                        } else {
+                            if (!isAlreadyShowingError(parentElement)) {
+                                if (value.type == 'tel') {
+                                    addErrorShowText(value, parentElement, "Number must have 10 digits");
+                                } else if (value.type == "email") {
+                                    addErrorShowText(value, parentElement, "Please enter a valid email");
+                                } else {
+                                    addErrorShowText(value, parentElement);
+                                }
+                            }
+                        }
+                    })
+                }
+            });
+
+            arrSelects.forEach((value) => {
+                const parentElement = value.parentElement;
+                const color = document.getElementById("top-heading").style.backgroundColor;
+                value.addEventListener("change", () => {
+                    if (value.value == "") {
+                        if (!isAlreadyShowingError(parentElement)) {
+                            addErrorShowText(value, parentElement);
+                        }
+                    } else {
+                        removeErrorShowText(value, parentElement, color)
+                    }
+                });
+            });
+        }
+
+
+        let count = 0;
+        let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let idOfBoxes = [
+            "personal-information",
+            "address-information",
+            "education-information",
+            "skills-and-certification",
+            "document-upload-and-web-presence",
+            "Learning-Preferences-and-Financial-Information",
+            "Emergency-contacts-information",
+            "technical-and-professional-details",
+            "Professional-networking-and-experience",
+            "Mentorship-and-personal-development"
+        ];
+
+
+        function moveToNext(e) {
+            if (count != arr.length) {
+                const color = document.getElementById("top-heading").style.backgroundColor;
+                const allInputs = Array.from(document.querySelectorAll(`#${idOfBoxes[count]} input`));
+                const allSelect = Array.from(document.querySelectorAll(`#${idOfBoxes[count ]} select`));
+                const invalidArray = allInputs.filter((value, index) => {
+                    if (value.value == "" || value.validity.valid == false) {
+                        const parentElement = value.parentElement;
+                        if (!isAlreadyShowingError(parentElement)) {
+                            addErrorShowText(value, parentElement);
+                        }
+                        value.validity.valid = false;
+
+
+                        return true;
+                    }
+                });
+                const invalidAllSelect = allSelect.filter((select, index) => {
+                    if (select.value == "") {
+                        const parentElement = select.parentElement;
+                        if (!isAlreadyShowingError(parentElement)) {
+                            addErrorShowText(select, parentElement);
+                        }
+                        select.validity.valid = false;
+
+                        return true;
+                    }
+                });
+                if (invalidArray.length == 0 && invalidAllSelect.length == 0) {
+                    document.getElementById(idOfBoxes[count + 1]).style.display = 'block';
+                    document.getElementById(idOfBoxes[count]).style.display = 'none';
+                    count += 1;
+                }
+            }
+        }
+
+
+        personalInformationValidation();
+    </script>
+</body>
+
+</html>

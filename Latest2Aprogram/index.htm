@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Course Registration</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.1-dist//bootstrap-5.3.1-dist//css//bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h2 class=" text-center my-1 py-2 px-1" id="top-heading">Welcome to Course Registration </h2>
+    <!-- <h2 class="bg-black text-white text-center">Welcome to Educational Course Registration </h2> -->
+    <div id="color-theme-box" class=" position-fixed  translate-middle-y end-0 top-50 mx-auto my-3 m-md-0  me-md-3">
+        <div class="mb-1 border border-2 border-dark rounded-circle cursor-pointer theme-active theme-box " id="theme-1" style=" background-image: linear-gradient(to right,#191717,#adb5bd);"> </div>
+        <div class="mb-1 border border-2 border-dark rounded-circle  cursor-pointer theme-box  " id="theme-2" style="background-image: linear-gradient(to right,#012a4a,#89c2d9);"> </div>
+        <div class="mb-1 border border-2 border-dark rounded-circle cursor-pointer theme-box   " id="theme-3" style="background-image: linear-gradient(to right,#38040e,#bd535a);"> </div>
+        <div class="mb-1 border border-2 border-dark rounded-circle  cursor-pointer  theme-box " id="theme-4" style="background-image: linear-gradient(to right,#3c096c,#c77dff);"> </div>
+        <div class="mb-1 border border-2 border-dark rounded-circle  cursor-pointer theme-box  " id="theme-5" style="background-image: linear-gradient(to right,#891180,#EEA1EB);"> </div>
+
+    </div>
+
+    <div id="steppers" class="stepper-box d-flex  p-2  rounded-2 my-3 align-items-center m-auto w-50  ">
+        <div class="steps d-flex w-100 align-items-center justify-content-between position-relative ">
+
+            <span class="circle  rounded-circle     bg-white d-flex justify-content-center align-items-center  active"> 1</span>
+
+            <span class="circle rounded-circle    bg-white  d-flex justify-content-center align-items-center"> 2</span>
+
+            <span class="circle rounded-circle     bg-white d-flex justify-content-center align-items-center"> 3</span>
+
+
+            <span class="circle rounded-circle    bg-white  d-flex justify-content-center align-items-center"> 4</span>
+
+            <span class="circle rounded-circle     bg-white d-flex justify-content-center align-items-center"> 5</span>
+
+
+            <span class="circle rounded-circle    bg-white  d-flex justify-content-center align-items-center"> 6</span>
+
+            <span class="circle  rounded-circle     bg-white d-flex justify-content-center align-items-center  "> 7</span>
+
+            <span class="circle rounded-circle    bg-white  d-flex justify-content-center align-items-center"> 8</span>
+
+            <span class="circle rounded-circle     bg-white d-flex justify-content-center align-items-center"> 9</span>
+
+
+            <span class="circle rounded-circle    bg-white  d-flex justify-content-center align-items-center"> 10</span>
+            <div class="progress-bar position-absolute  z-n1 w-100 " style="height: 4px; ">
+                <span class="indicator position-absolute h-100  "></span>
+            </div>
+        </div>
+
+        <!-- <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-center">
+            <button id="prev" class="btn btn-primary " disabled> previous</button>
+            <button id="next" class="btn btn-primary"> next</button>
+        </div> -->
+    </div>
+
+    <div class="parent-container  d-flex justify-content-md-center align-items-md-center  my-3 my-md-4  w-100 ">
+
+        <!-- <div id="personal-information" class="main-container d-flex  row "> -->
+        <div id="personal-information" class="main-container d-flex   row ">
+            <h5> Personal Information: </h5>
+            <div class=" col-12 col-sm-6  ">
+                <label for="first_name">First Name :- </label>
+                <input type="text" id="first_name" placeholder="Enter your first name" class="w-100">
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="last_name">Last Name :- </label>
+                <input type="text" id="last_name" placeholder="Enter your last name " class="w-100">
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="date-of-birth">DOB:- </label>
+                <input type="date" id="date-of-birth" placeholder="Enter your DOB">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="mob-no">Contact Number:- </label>
+                <input type="tel" id="mob-no" pattern="[0-9]{10}" placeholder="Enter your Number">
+            </div>
+
+            <div class=" col-12 col-sm-6  ">
+                <label for="e-mail">Email :- </label>
+                <input type="email" id="e-mail" placeholder="Enter your Email">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="gender">Gender:- </label>
+                <select name="gender" id="gender">
+                        <option value="">Select</option>
+             <option value="Male">Male</option>
+              <option value="Female">Female</option>
+             <option value="other">Other</option>
+             </select>
+            </div>
+
+            <!-- <div class=" d-flex justify-content-end">
+                <button class="btn-box btn-custom btn-black py-1 " onclick="moveToNext()"> Next </button>
+            </div> -->
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " disabled onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+        <div id="address-information" class="main-container  row ">
+            <h5>Address Information:</h5>
+            <div class=" col-12 col-sm-6  ">
+                <label for="Address">Address 1:- </label>
+                <input type="text" id="Address" placeholder="Enter your Address">
+            </div>
+
+            <div class=" col-12 col-sm-6  ">
+                <label for="Address">Address 2:- </label>
+                <input type="text" id="Address2" placeholder="Enter your Address">
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="city">City :- </label>
+                <input type="text" id="city" placeholder="Enter your city">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="state">State :- </label>
+                <input type="text" id="state" placeholder="Enter your state">
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="zip-code">ZIP code:- </label>
+                <input type="number" id="zip-code" min="100000" max="999999" pattern="[0-9]{6}" placeholder="Enter your zip-code">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="Country">Country:- </label>
+                <input type="text" id="Country" placeholder="Enter your Country">
+
+            </div>
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+        <div id="education-information" class="main-container row ">
+            <h5> Educational Information </h5>
+            <div class=" col-12 col-sm-6  ">
+                <label for="Education-level">Highest Education Level:- </label>
+                <select name="Education-level" id="Education-level">
+                  <option value="">Select</option>
+                  <option value="High School">High School</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Postgraduate">Postgraduate</option>
+                  </select>
+            </div>
+
+            <div class=" col-12 col-sm-6  ">
+                <label for="field-study">Field of Study:-</label>
+                <input type="text" name="field-study" id="field-study" placeholder="Enter your field of study ">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="Graduation-year">Completion Year:-</label>
+                <!-- <input type="date" maxlength="4" minlength="4" name="Graduation-year" id="Graduation-year" placeholder="Enter your Graduation year "> -->
+                <input type="number" id="Graduation-year" name="Graduation-year" min="2000" max="2050" step="1">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="Percentage">Percentage:-</label>
+                <input type="number" max="100" step="1" min="0" name="Percentage" id="Percentage" placeholder="Enter your Percentage">
+            </div>
+            <div>
+                <label for="School-name">University Name:- </label>
+                <input type="text" id="School-name" placeholder="Enter your University Name ">
+            </div>
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+        <div id="skills-and-certification" class="main-container  row ">
+            <h5>Academic Details: </h5>
+            <div class=" col-12 col-sm-6  ">
+                <label for="previous-course">Previous Course(s) Completed:</label>
+                <input type="text" name="previous-course" id="previous-course" placeholder="Enter your previous course ">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="course-preferences">Course Preferences:</label>
+                <input type="text" name="course-preferences" id="course-preferences" placeholder="Enter your course-preferences ">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="technical-skill">Technical Skills:</label>
+                <input type="text" name="technical-skill" id="technical-skill" placeholder="Enter your technical skill ">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="Soft-skills:">Soft Skills:</label>
+                <input type="text" name="Soft-skills:" id="Soft-skills:" placeholder="Enter your Soft-skills ">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="Certifications">Certifications:</label>
+                <input type="text" name="Certifications" id="Certifications" placeholder="Enter your Certifications ">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="Languages-proficiency">Languages Proficiency:</label>
+                <input type="text" name="Languages-proficiency" id="Languages-proficiency" placeholder="Enter your Languages-proficiency ">
+
+            </div>
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+        <div id="document-upload-and-web-presence" class="main-container   row ">
+            <h5>Document Upload and Web Presence:</h5>
+            <div> <label for="Resume-upload">Resume Upload:</label>
+                <input type="file" name="Resume-upload" id="Resume-upload" placeholder="Enter your Resume-upload ">
+            </div>
+
+            <div> <label for="LinkedIn-url">LinkedIn URL:</label>
+                <input type="url" name="LinkedIn-url" id="LinkedIn-url" placeholder="Enter your LinkedIn-url ">
+
+            </div>
+            <div> <label for="Portfolio-url">Portfolio URL:</label>
+                <input type="url" name="Portfolio-url" id="Portfolio-url" placeholder="Enter your Portfolio-url ">
+
+            </div>
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+        <div id="Learning-Preferences-and-Financial-Information" class="main-container   row ">
+            <h5>Learning Preferences and Financial Information:</h5>
+            <div class=" col-12   "> <label for="preferred-way">Preferred Learning Format:</label>
+                <select name="preferred-way" id="preferred-way">
+                          <option value="">Select</option>
+                          <option value="In-person">In-person</option>
+                          <option value="Online">Online</option>
+                          <option value="Hybrid">Hybrid</option>
+                    </select>
+            </div>
+            <div class=" col-12   ">
+                <label for="course-schedule">Preferred Course Schedule:</label>
+                <input type="text" name="course-schedule" id="course-schedule" placeholder="Enter your course-schedule" p>
+
+            </div>
+            <div class=" col-12   ">
+                <label for="Financial-needed">Financial Assistance Needed:</label>
+                <select name="Financial-needed" id="Financial-needed">
+        <option value="">Select</option>
+     <option value="yes">yes</option>
+     <option value="no">no</option> 
+                </select>
+
+            </div>
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+        <div id="Emergency-contacts-information" class="main-container   row ">
+            <h5>Emergency Contact Information: </h5>
+            <div> <label for="Emergency-contact-name"> Contact Name:</label>
+                <input type="text" name="Emergency-contact-name" id="Emergency-contact-name" placeholder="Enter your Emergency-contact-name">
+
+            </div>
+            <div>
+                <label for="Emergency-contact-number">Contact Number:</label>
+                <input type="tel" pattern="[0-9]{10}" name="Emergency-contact-number" id="Emergency-contact-number" placeholder="Enter your Emergency-contact-number">
+
+
+            </div>
+            <div> <label for="Emergency-contact-Relationship">  Relationship:</label>
+                <input type="text" name="Emergency-contact-Relationship" id="Emergency-contact-Relationship" placeholder="Enter your Emergency-contact-Relationship">
+
+            </div>
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+        <div id="technical-and-professional-details" class="main-container   row ">
+            <h5> Technical and Professional Details:</h5>
+
+            <div class=" col-12 col-sm-6  "> <label for="technical-challenges">Technical Challenges Completed:</label>
+                <input type="text" name="technical-challenges" id="technical-challenges">
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="Project-management-experience">Project Experience:</label>
+                <input type="text" name="Project-experience" id="Project-experience">
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="Additional-information">Additional Information:</label>
+                <input type="text" name="Additional-information" id="Additional-information">
+
+            </div>
+            <div class=" col-12 col-sm-6  ">
+                <label for="preferred-way-communication">Preferred Communication Method:</label>
+                <select name="preferred-way-communication" id="preferred-way-communication">
+        <option value="">Select</option>
+     <option value="email">email</option>
+     <option value="mobile">mobile</option>
+     <option value="both">both</option>
+                    </select>
+
+            </div>
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+
+        <div id="Professional-networking-and-experience" class="main-container   row ">
+            <h5>Professional Networking and Experience:</h5>
+            <div class=" col-12 col-sm-6  "> <label for="LinkedIn-recommendation">LinkedIn Recommendations:</label>
+                <input type="text" name="LinkedIn-recommendation" id="LinkedIn-recommendation">
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="Coding-bootcamp">Coding Boot-camp Attended:</label>
+                <input type="text" name="Coding-boot-camp" id="Coding-bootcamp">
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="tech-conferences">Tech Conferences Attended:</label>
+                <input type="text" name="tech-conferences" id="tech-conferences">
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="Foreign-language">Foreign Language Proficiency:</label>
+                <input type="text" name="Foreign-language" id="Foreign-language">
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="preferred-coding-language">Preferred Coding Languages:</label>
+                <input type="text" name="preferred-coding-language" id="preferred-coding-language">
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="Research-paper">Publications Papers:</label>
+                <input type="text" name="Research-paper" id="Research-paper">
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="github-url">GitHub Repository URL:</label>
+                <input type="url" name="github-url" id="github-url" placeholder="Enter your github-url ">
+
+            </div>
+            <div class=" col-12 col-sm-6  "><label for="Hobbies-interest">Hobbies and Interests:</label>
+                <input type="text" name="Hobbies-interest" id="Hobbies-interest">
+            </div>
+            <div class="buttons my-5 d-flex gap-3 align-items-center justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+                <button id="next" class="btn  btn-custom btn-black" onclick="moveToNext(event)"> next</button>
+            </div>
+        </div>
+
+        <div id="Mentorship-and-personal-development" class="main-container   row ">
+            <h5>Mentorship and Personal Development:</h5>
+            <div class=" col-12 col-sm-6  "> <label for="preferred-mentorship">Preferred Mentorship:</label>
+                <select name="preferred-mentorship" id="preferred-mentorship">
+                 <option value="">Select</option>
+                  <option value="yes">yes</option>
+                    <option value="no">no</option> 
+                 </select>
+
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="preferred-mentorship-area">Preferred Mentorship Area:</label>
+                <input type="text" name="preferred-mentorship-area" id="preferred-mentorship-area">
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="Extracurricular-activity">Extracurricular Activities:</label>
+                <input type="text" name="Extracurricular-activity" id="Extracurricular-activity">
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="Coding-competitions">Coding Competitions Participated:</label>
+                <input type="text" name="Coding-competitions" id="Coding-competitions">
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="open-source-contributions">Open Source Contributions:</label>
+                <input type="text" name="open-source-contributions" id="open-source-contributions">
+            </div>
+            <div class=" col-12 col-sm-6  "> <label for="Professional-memberships">Professional Memberships:</label>
+                <input type="text" name="Professional-memberships" id="Professional-memberships">
+            </div>
+            <div class=" col-12 d-flex   ">
+                <input type="checkbox" name="terms-condition-checkbox" style="width: auto; margin-right: 10px; display: inline-block !important;" id="terms-condition-checkbox">
+                <label for="terms-condition-checkbox">I hear by declare that all information is correct.</label>
+
+            </div>
+            <div class="d-flex  justify-content-between">
+                <button id="prev" class="btn btn-custom btn-black " onclick="moveToPrevious(event)"> previous</button>
+
+                <button class="btn-box btn-custom btn-black py-1 " id="submit-btn" onsubmit="onSubmitClick(event)"> Submit </button>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div id="submit-success" class="main-container  overflow-hidden  justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <img src="tick.webp" alt="" srcset="">
+            <h2>Thank You</h2>
+            <p class="text-center">Your details has been successfully submitted. Thanks !</p>
+
+        </div>
+    </div>
+
+    <!--=============================================== js============================================= -->
+    <!-- <script src="script.js"></script> -->
+    <script src="ProperScript.js"></script>
+
+</body>
+
+
+</html>
